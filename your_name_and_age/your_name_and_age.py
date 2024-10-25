@@ -23,3 +23,9 @@ while True:
     if another != "yes":
         break
 
+if entries:
+    max_age = max(entry['age'] for entry in entries) 
+    oldest_people = [entry for entry in entries if entry['age'] ==max_age]
+
+    oldest_names = ', '.join(person['name'] for person in oldest_people)
+    print(f"The oldest person(s): {oldest_names} with {max_age}.") 
